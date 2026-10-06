@@ -1,0 +1,63 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+        <a href="#about" class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+            <span class="text-blue-600 font-mono"></span>Vikram Anupa <span
+                class="text-blue-600 font-mono"></span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-600">
+            <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+            <a href="#skills-experience" class="hover:text-blue-600 transition-colors">Skills & Experience</a>
+            <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+            <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-5">
+            <a href="https://github.com/Vikram9250" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub profile" class="text-slate-500 hover:text-slate-900 transition-colors">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+                    <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.31-3.76-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.77 2.18 3.56 1.56.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.24-5.1 5.51.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/vikram-anupa" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn profile" class="text-slate-500 hover:text-blue-700 transition-colors">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+                    <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.96V9.19h2.97v9.56ZM6.45 7.88a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.3 10.87h-2.97V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.47V9.19h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.01 0 3.57 1.98 3.57 4.56v5.24Z" />
+                </svg>
+            </a>
+            <a href="/Vikram_Anupa_Resume.pdf" target="_blank" rel="noopener noreferrer"
+                aria-label="Open Vikram Anupa's resume"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-all shadow-md shadow-blue-600/20">
+                Resume
+            </a>
+        </div>
+
+        <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
+            [attr.aria-expanded]="menuOpen" aria-controls="mobile-navigation"
+            [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+            (click)="menuOpen = !menuOpen">
+            <svg *ngIf="!menuOpen" aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6 fill-none stroke-current" stroke-width="2" stroke-linecap="round">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg *ngIf="menuOpen" aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6 fill-none stroke-current" stroke-width="2" stroke-linecap="round">
+                <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+        </button>
+    </div>
+
+    <nav *ngIf="menuOpen" id="mobile-navigation" class="md:hidden border-t border-slate-200 bg-white px-4 py-3 shadow-lg">
+        <a href="#about" (click)="menuOpen = false" class="block rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700">About</a>
+        <a href="#skills-experience" (click)="menuOpen = false" class="block rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700">Skills & Experience</a>
+        <a href="#projects" (click)="menuOpen = false" class="block rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700">Projects</a>
+        <a href="#contact" (click)="menuOpen = false" class="block rounded-lg px-3 py-3 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700">Contact</a>
+        <a href="/Vikram_Anupa_Resume.pdf" target="_blank" rel="noopener noreferrer" (click)="menuOpen = false" class="mt-2 block rounded-lg bg-blue-600 px-3 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700">View Resume</a>
+        <div class="flex items-center gap-5 px-3 pt-3 mt-2 border-t border-slate-100">
+            <a href="https://github.com/Vikram9250" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="text-slate-500 hover:text-slate-900">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.31-3.76-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.77 2.18 3.56 1.56.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.24-5.1 5.51.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" /></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/vikram-anupa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="text-slate-500 hover:text-blue-700">
+                <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.96V9.19h2.97v9.56ZM6.45 7.88a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.3 10.87h-2.97V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.47V9.19h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.01 0 3.57 1.98 3.57 4.56v5.24Z" /></svg>
+            </a>
+        </div>
+    </nav>
+</header>

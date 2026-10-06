@@ -1,9 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Navbar } from './components/navbar/navbar';
+import { Hero } from './components/hero/hero';
+import { SkillsExperience } from './components/skills-experience/skills-experience';
+import { Projects } from './components/projects/projects';
+import { Contact } from './components/contact/contact';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Navbar, Hero, SkillsExperience, Projects, Contact],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

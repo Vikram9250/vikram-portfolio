@@ -1,59 +1,66 @@
-# VikramPortfolio
+# Vikram Anupa — Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+A responsive personal portfolio for Vikram Anupa, built with Angular 20, Tailwind CSS, Bootstrap 5, and Devicon.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Responsive hero, skills, experience, projects, and contact sections.
+- Technology logos for skills, with an experience timeline.
+- Floating WhatsApp contact link.
+- Contact form that opens a prefilled email in the visitor's email app; it does not submit to a server.
+- Local profile photo, resume, and favicon served from `public/`.
+- Project cards are kept in the code but hidden for now. The Projects section displays a coming-soon message until real project details and links are ready.
 
-```bash
-ng serve
-```
+## Requirements
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Node.js and npm
 
-## Code scaffolding
+## Development
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Install dependencies and start the Angular development server:
 
 ```bash
-ng generate --help
+npm install
+npm start
 ```
 
-## Building
+Open <http://localhost:4200/>. The development server reloads when application files change.
 
-To build the project run:
+## Build
+
+Create an optimized production build:
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build output is written to `dist/`.
 
-## Running unit tests
+## Tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Run the unit tests in Chrome:
 
 ```bash
-ng test
+npm test -- --watch=false
 ```
 
-## Running end-to-end tests
+## Updating portfolio content
 
-For end-to-end (e2e) testing, run:
+- Profile image: replace `public/vicky.jpeg` and keep the same filename, or update the image path in `src/app/components/hero/hero.html`.
+- Resume: replace `public/Vikram_Anupa_Resume.pdf` and keep the same filename, or update the resume links in `src/app/components/navbar/navbar.html`.
+- Skills and work history: update `skillCategories` and `experiences` in `src/app/components/skills-experience/skills-experience.ts`.
+- Projects: update the `projects` array in `src/app/components/projects/projects.ts` with real project descriptions, repository URLs, and live demo URLs. Set `showProjects` to `true` in `src/app/components/projects/projects.ts` to display the cards instead of the coming-soon message.
+- Contact details: update the WhatsApp link in `src/app/app.html` and the email address in `src/app/components/contact/contact.ts` and `src/app/components/contact/contact.html` if they change.
 
-```bash
-ng e2e
+## Project structure
+
+```text
+public/                         Static assets (photo, resume, favicon)
+src/app/components/
+  contact/                      Contact details and email form
+  hero/                         Hero and About section
+  navbar/                       Responsive navigation
+  projects/                     Project card data and coming-soon state
+  skills-experience/            Technology skills and career timeline
+src/styles.css                  Global Bootstrap, Tailwind, and Devicon styles
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

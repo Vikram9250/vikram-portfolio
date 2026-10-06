@@ -1,0 +1,76 @@
+<section id="projects" class="my-8 rounded-3xl border border-slate-200/60 bg-slate-50/50 px-4 py-16 sm:my-12 sm:px-6 sm:py-24">
+
+    <div class="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-3 font-mono">Portfolio Showcase</h2>
+        <h3 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Featured Projects</h3>
+        <p class="text-slate-600 mt-4 text-base">I'm preparing a selection of projects to share here.</p>
+    </div>
+
+    <div *ngIf="!showProjects" class="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-white px-6 py-10 text-center shadow-sm sm:px-10">
+        <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h5l2 2h8A1.5 1.5 0 0 1 21 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z" />
+                <path d="M8 14h8m-8 3h5" />
+            </svg>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900">Projects coming soon</h4>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+            I'm updating this section with selected projects, complete details, live demos, and source code links.
+            Please check back soon.
+        </p>
+    </div>
+
+    <div *ngIf="showProjects" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mx-auto max-w-7xl">
+        <div *ngFor="let project of projects" class="col">
+            <article class="card group h-100 rounded-2xl border-slate-200 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                <div class="card-body flex flex-col p-6 sm:p-7">
+                    <div class="mb-4 flex items-center justify-between">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h5l2 2h8A1.5 1.5 0 0 1 21 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z" />
+                            </svg>
+                        </div>
+                        <div class="flex items-center gap-3">
+                        <a [href]="project.demo" target="_blank" rel="noopener noreferrer"
+                            [attr.aria-label]="'View ' + project.title + ' demo'"
+                            class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 transition-colors hover:text-blue-800">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14 21 3M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6" /></svg>
+                            <span>Live demo</span>
+                        </a>
+                        <a [href]="project.github" target="_blank" rel="noopener noreferrer"
+                            [attr.aria-label]="'View ' + project.title + ' source on GitHub'"
+                            class="inline-flex items-center gap-1 text-sm font-medium text-slate-500 transition-colors hover:text-blue-700">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.31-3.76-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.77 2.18 3.56 1.56.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.24-5.1 5.51.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" /></svg>
+                            <span>Source</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                        </div>
+                    </div>
+                    <h4 class="card-title mb-3 text-xl font-bold text-slate-900">{{ project.title }}</h4>
+                    <p class="card-text mb-6 text-sm leading-relaxed text-slate-600">{{ project.description }}</p>
+                    <dl class="mb-6 space-y-3 text-sm">
+                        <div>
+                            <dt class="font-semibold text-slate-800">Focus</dt>
+                            <dd class="mt-0.5 text-slate-600">{{ project.focus }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-800">Challenge</dt>
+                            <dd class="mt-0.5 text-slate-600">{{ project.challenge }}</dd>
+                        </div>
+                        <div>
+                            <dt class="font-semibold text-slate-800">Outcome</dt>
+                            <dd class="mt-0.5 text-slate-600">{{ project.outcome }}</dd>
+                        </div>
+                    </dl>
+                    <div class="mt-auto flex flex-wrap gap-2 border-t border-slate-100 pt-4">
+                        <span *ngFor="let tech of project.techStack"
+                            class="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700">
+                            {{ tech }}
+                        </span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</section>
